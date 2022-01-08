@@ -19,19 +19,6 @@ class Invoice_model extends CI_Model{
         return true;
     }
 
-    // CONTOH INVOICE BIASA
-    public function tampil_data()
-    {
-        $result = $this->db->get('invoice');
-        return $result;
-        // if($result->num_rows() > 0){
-        //     return $result->result();
-        // } else {
-        //     return false ;
-        // }
-    }
-
-    // CONTOH INVOICE BENAR
     public function get()
     {
         $this->db->select('*');
@@ -110,7 +97,6 @@ class Invoice_model extends CI_Model{
         $this->db->or_like('alamat', $keyword);
         $this->db->or_like('no_telp', $keyword);
         $this->db->or_like('tgl_pesan', $keyword);
-
         return $this->db->get()->result();
         
     }

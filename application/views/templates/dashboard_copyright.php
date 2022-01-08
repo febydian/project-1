@@ -2,6 +2,12 @@
 
     <!-- footer section ends -->
 
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

@@ -34,8 +34,9 @@ class Teransaksi extends CI_Controller
         $data['invoice'] = $this->invoice_model->ambil_id_invoice($id);
         $data['pesanan'] = $this->invoice_model->ambil_id_pesanan($id);
         $data['title'] = 'Detail pemesanaan';
+
         $this->load->view('templates/dashboard_header', $data);
-        $this->load->view('teransaksi/detail_teransaksi',$data);
+        $this->load->view('teransaksi/detail_teransaksi', $data);
         $this->load->view('templates/dashboard_copyright');
     }
 }

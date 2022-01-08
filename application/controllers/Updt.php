@@ -11,6 +11,8 @@ class Updt extends CI_Controller
 
         curl_setopt_array($curl, array(
         CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+        // CURLOPT_SSL_VERIFYHOST => 0,
+        // CURLOPT_SSL_VERIFYPEER => 0,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -38,7 +40,8 @@ class Updt extends CI_Controller
         $data_provinsi = $array_response['rajaongkir']['results'];
         echo "<option value=''>-- Pilih Provinsi --</option>";
         foreach ($data_provinsi as $key => $value) {
-            echo "<option value='".$value['province_id']."'id_provinsi='".$value['province_id']."'>".$value['province']."</option>";
+            // echo "<option value='".$value['province_id']."'id_provinsi='".$value['province_id']."'>".$value['province']."</option>";
+            echo "<option value='" . $value['province_id'] . "'>" . $value['province'] . "</option>";
         }
         }
     }

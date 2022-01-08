@@ -49,12 +49,18 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                <div class="container">
-                                    <div class="row md-6">
-                                        <img width="100%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
-                                    </div>
-                                </div>
                             </div>
+                                <div class="container mt-3">
+                                    <?php 
+                                    if(empty($invoice->bukti_pembayaran)) { ?>
+                                    <div class="alert alert-danger" role="alert">Belum Mengirim Bukti Pembayaran</div>
+                                    <?php } else { ?>
+                                        <div class="row md-6 mb-5">
+                                            <h5>Bukti Teransaksi :</h5>
+                                            <img width="100%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
+                                        </div>
+                                    <?php } ?>
+                                </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive table-invoice">
                                     <table id="example" class="table table-bordered table-striped" style="margin-bottom: 20px; padding-top:500px; width: 100%">
@@ -70,19 +76,25 @@
                                         <tbody>
                                             <?php 
                                             $total = 0;
-                                            foreach($pesanan as $ps) : 
-                                                $subtotal = $ps->jumlah*$ps->harga;
-                                                $total += $subtotal;
-                                            ?>
-                                            <tr>
-                                                <td><?= $ps->id_ikan ?></td>
-                                                <td><?= $ps->jenis_ikan ?></td>
-                                                <td><?= $ps->jumlah ?></td>
-                                                <td><?= number_format($ps->harga, 0,',','.') ?></td>
-                                                <td><?= number_format($subtotal, 0,',','.') ?></td>
-                                            </tr>
+                                            if (is_array($pesanan) || is_object($pesanan))
+                                            {
+                                                foreach ($pesanan as $value) { 
+                                                {
+                                                    $subtotal = $value->jumlah * $value->harga;
+                                                $total += $subtotal; ?>
 
-                                            <?php endforeach; ?>
+                                                <tr>    
+                                                    <td><?= $value->id_ikan ?></td>
+                                                    <td><?= $value->jenis_ikan ?></td>
+                                                    <td><?= $value->jumlah ?></td>
+                                                    <td><?= number_format($value->harga, 0,',','.') ?></td>
+                                                    <td><?= number_format($subtotal, 0,',','.') ?></td>
+                                                </tr>
+
+                                            <?php } 
+                                                } 
+                                            } ?>
+
                                             <tr>
                                                 <td colspan="4" align="right">Total</td>
                                                 <td align="right">Rp. <?= number_format($total, 0,',','.') ?></td>

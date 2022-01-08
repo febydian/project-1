@@ -54,10 +54,16 @@
                                     </div> -->
                                 </div>
                             </div>
-                            <div class="container">
-                                <div class="row md-6">
-                                    <img width="50%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
-                                </div>
+                            <div class="container mt-3">
+                                    <?php 
+                                    if(empty($invoice->bukti_pembayaran)) { ?>
+                                    <button class="btn btn-danger btn-block">Belum Mengirim Bukti Pembayaran</button>
+                                    <?php } else { ?>
+                                        <div class="row md-6 mb-5">
+                                            <h5>Bukti Teransaksi :</h5>
+                                            <img width="100%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
+                                        </div>
+                                    <?php } ?>
                             </div>
                         </div>
                         <div class="card-body p-0">

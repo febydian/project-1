@@ -66,12 +66,10 @@
                                                     </div> -->
                                                     <div class="form-group">
                                                         <label for="inputState">Provinsi</label>
-                                                        <input type="text" name="provinsi" id="provinsi" class="form-control" required></input>
-                                                        <!-- <select name="provinsi" id="provinsi" class="form-control" required> 
+                                                        <!-- <input type="text" name="provinsi" id="provinsi" class="form-control" required></input> -->
+                                                        <select name="provinsi" id="provinsi" class="form-control" required> 
                                                             <option selected>-- Provinsi --</option>
-                                                            <option>Jogja</option>
-                                                            <option>Bali</option>
-                                                        </select> -->
+                                                        </select>
                                                         <?= form_error('provinsi', '<small class="text-danger pl-3">','</small>') ?>
                                                     </div>
                                                     <div class="form-group">
@@ -201,8 +199,7 @@
             type : "POST",
             url : "<?= base_url('updt/provinsi') ?>",
             success : function(hasil_provinsi){
-                console.log(hasil_provinsi); 
-                // console.log(hasil_provinsi)
+                console.log(hasil_provinsi);
                 // $("select[name=provinsi]").html(hasil_provinsi);
             }
         });
@@ -221,6 +218,11 @@
         });
     });
 </script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> -->
 
 
 
