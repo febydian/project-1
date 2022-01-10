@@ -1,4 +1,4 @@
-<div class="container" style="padding:10px 10px; margin-top: 130px; margin-bottom: 198px; background-color: white;">
+<div class="container" style="padding:10px 10px; margin-top: 150px; margin-bottom: 290px; background-color: white;">
     <h2>Keranjang Belanja</h2><br>
     
     <table class="table table-bordered table-striped table-hover" >
@@ -41,8 +41,8 @@
     </table>
 
     <div align="right">
-        <a href="<?= base_url('dashboard/hapus_keranjang') ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Clear Cart</a>
-        <a href="<?= base_url('dashboard/#ikan') ?>" class="btn btn-sm btn-primary"><i class="fas fa-backspace"></i> Kembali</a>
-        <a href="<?= base_url('dashboard/pembayaran') ?>" class="btn btn-sm btn-success"><i class="fas fa-shopping-cart"></i> CheckOut</a>
+        <a href="<?= base_url('dashboard/hapus_keranjang') ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Clear Cart</a>
+        <a href="<?= base_url('dashboard/#ikan') ?>" class="btn btn-primary"><i class="fas fa-backspace"></i> Kembali</a>
+        <a href="<?= base_url('dashboard/pembayaran') ?>" class="btn btn-success"><i class="fas fa-shopping-cart"></i> CheckOut</a>
     </div>
 </div>

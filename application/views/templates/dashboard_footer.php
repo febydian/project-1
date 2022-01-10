@@ -1,8 +1,7 @@
 <section class="footer">
         <div class="box-container">
             <div class="box" data-aos="fade-up" data-aos-delay="150">
-                <a href="#" class="logo"> <i class="fas fa-paper-plane"></i>travel </a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ad?</p>
+                <p>Sosial media yang dapat dikunjungi</p>
                 <div class="share">
                     <a href="#" class="fab fa-facebook-f"></a>
                     <a href="#" class="fab fa-twitter"></a>

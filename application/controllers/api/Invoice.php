@@ -11,6 +11,8 @@ class Invoice extends REST_Controller{
     {
         parent::__construct();
         $this->load->model('invoice_api_model', 'invoice');
+
+        $this->methods['index_get']['limit'] = 500;
     }
 
     public function index_get() 

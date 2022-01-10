@@ -38,8 +38,8 @@
 
               <li class="menu-header">Penjualan</li>
               <li><a class="nav-link" href="<?= base_url('invoice1');?>"><i class="fas fa-file-invoice"></i><span>invoice</span></a></li>
-              <li class="menu-header">Laporan</li>
-              <li><a class="nav-link" href="<?= base_url('laporan');?>"><i class="far fa-sticky-note"></i><span>Laporan</span></a></li>
+              <!-- <li class="menu-header">Laporan</li>
+              <li><a class="nav-link" href="<?= base_url('laporan');?>"><i class="far fa-sticky-note"></i><span>Laporan</span></a></li> -->
               <li class="menu-header">Logout</li>
               <li><a class="nav-link" href="<?= base_url('auth/logout');?>"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
             </ul>

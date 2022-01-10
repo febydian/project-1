@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Updt extends CI_Controller
 {
-    public $api_key = '6b433db65d67045e2d4f6a87b52e67f6';
+    public $api_key = 'e273ef0184989035aee74c4e0df1e96e';
+
     public function provinsi()
     {
 
@@ -40,8 +41,7 @@ class Updt extends CI_Controller
         $data_provinsi = $array_response['rajaongkir']['results'];
         echo "<option value=''>-- Pilih Provinsi --</option>";
         foreach ($data_provinsi as $key => $value) {
-            // echo "<option value='".$value['province_id']."'id_provinsi='".$value['province_id']."'>".$value['province']."</option>";
-            echo "<option value='" . $value['province_id'] . "'>" . $value['province'] . "</option>";
+            echo "<option value='" . $value['province'] . "' id_provinsi='" . $value['province_id'] ."'>" . $value['province'] . "</option>";
         }
         }
     }
@@ -74,13 +74,11 @@ class Updt extends CI_Controller
         echo "cURL Error #:" . $err;
         } else {
             $array_response = json_decode($response, true);
-            // echo '<pre>';
-            //     print_r($array_response['rajaongkir']['results']);
-            // echo '</pre>';
-            $data_provinsi = $array_response['rajaongkir']['results'];
+            
+            $data_kota = $array_response['rajaongkir']['results'];
             echo "<option value=''>-- Pilih Kota --</option>";
-            foreach ($data_provinsi as $key => $value) {
-                echo "<option value='".$value['city_id']."'>".$value['city_name']."</option>";
+            foreach ($data_kota as $key => $value) {
+                echo "<option value='".$value['city_name']."' id_kota='". $value['city_id'] ."'>".$value['city_name']."</option>";
             }
         }
     }
@@ -90,6 +88,6 @@ class Updt extends CI_Controller
         echo '<option value="">-- Pilih Expedisi --</option>';
         echo '<option value="jne">JNE</option>';
         echo '<option value="tiki">TIKI</option>';
-        echo '<option value="pos">Pos Indonesia</option>';
+        echo '<option value="pos">Ambil di Tempat</option>';
     }
 }

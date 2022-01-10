@@ -1,4 +1,4 @@
-<div class="container" style="margin-top:100px; margin-bottom:80px; ">
+<div class="container" style="margin-top:120px; margin-bottom:130px; ">
     <div class="card">
         <div class="card-body">
             <?php foreach($detail as $dt) : ?>

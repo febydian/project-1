@@ -29,6 +29,7 @@
   <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+  <script src="<?= base_url();?>assets/stisla/assets/js/canvasjs.min.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>

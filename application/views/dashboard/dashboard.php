@@ -4,39 +4,33 @@
 
     <section class="home" id="home">
         <div class="content">
-            <span data-aos="fade-up" data-aos-delay="150">Perikanan</span>
-            <h3 data-aos="fade-up" data-aos-delay="300">UTPD BalaiaBenih Sleman</h3>
-            <p data-aos="fade-up" data-aos-delay="450">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quia illum quod perspiciatis harum in possimus? Totam consequuntur officia quia?</p>
-            <a data-aos="fade-up" data-aos-delay="600" href="#" class="btn">Klik More</a>
+            <!-- <span data-aos="fade-up" data-aos-delay="150">Perikanan</span> -->
+            <h3 data-aos="fade-up" data-aos-delay="300">UPTD PENGEMBANGAN BUDIDAYA</h3>
+            <h3 data-aos="fade-up" data-aos-delay="300">PENGOLAHAN DAN PEMASARAAN PERIKANAN</h3>
+            <!-- <p data-aos="fade-up" data-aos-delay="450">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quia illum quod perspiciatis harum in possimus? Totam consequuntur officia quia?</p> -->
         </div>
     </section>
 
     <!-- home section ends -->
 
-    <!-- booking form section starts  -->
+    <!-- about section starts  -->
+    <section class="about" id="about">
+        <div class="content" data-aos="fade-left" data-aos-delay="600">
+            <span>Apa itu ?</span>
+            <h3>UPTD PBPP Perikanan</h3>
+            <p>unit pelaksana teknis budidaya pengolahan dan pemasaraan di bawah dinas pertanian, pangan dan perikanan kabupaten sleman, yang berfokus pada sektor perikanan</p>
+        </div>
 
-    <!-- <section class="book-form" id="book-form">
-        <form action="">
-            <div data-aos="zoom-in" data-aos-delay="150" class="inputBox">
-                <span>where to?</span>
-                <input type="text" placeholder="place name" value="" />
+        <div class="video-container" data-aos="fade-right" data-aos-delay="300">
+            <div class="video-container rounded" data-aos="fade-right" data-aos-delay="300">
+            <iframe width="713" height="401" src="https://www.youtube.com/embed/Q6jYR9lrtXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
-                <span>when?</span>
-                <input type="date" value="" />
-            </div>
-            <div data-aos="zoom-in" data-aos-delay="450" class="inputBox">
-                <span>how many?</span>
-                <input type="number" placeholder="number of travelers" value="" />
-            </div>
-            <input data-aos="zoom-in" data-aos-delay="600" type="submit" value="find now" class="btn" />
-        </form>
-    </section> -->
+        </div>
 
-    <!-- booking form section ends -->
+    </section>
+    <!-- about section ends -->
 
     <!-- about section starts  -->
-
     <section class="about" id="about">
         <div class="video-container" data-aos="fade-right" data-aos-delay="300">
             <video src="<?= base_url('assets/template2/') ?>images/ikan6.mp4" muted autoplay loop class="video"></video>
@@ -48,12 +42,11 @@
         </div>
 
         <div class="content" data-aos="fade-left" data-aos-delay="600">
-            <span>Apa itu UPTD Perikanan ?</span>
-            <h3>UPTD Perikanan Sleman</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde fugit repellat error deserunt nam aperiam odit libero quos provident. Nostrum?</p>
+            <span>di UPDT berfokus pada ikan apa saja ?</span>
+            <!-- <h3>UPTD Perikanan Sleman</h3> -->
+            <p>untuk pemasaran ikan di UPDT sendiri kami berfokus pada berbagai macam ikan. mulai dari ikan hias sampai ikan konsumsi, dan dari jenis benih sampai indukan</p>
         </div>
     </section>
-
     <!-- about section ends -->
 
     <!-- destination section starts  -->
@@ -95,21 +88,20 @@
                                 <td><?= $ih->deskripsi ?></td>
                               </tr>
                             </table>
-                                <div class="row" style="text-align: right;" >
-                                    <div class="col-md-6"><?php
-                                        if($ih->stok =="0"){
-                                            echo "<span class='btn btn-danger' disable>Stok Habis</span>";
-                                        } else {
-                                        echo anchor('dashboard/tambah_ke_Keranjang/'.$ih->id_ikan,'<div class="btn btn-primary">tambah ke keranjang</div>');
-                                        // redirect('teransaksi');
-                                        }
-                                        ?>
-                                        <?php ?></div>
-                                    <div class="col-md-6">
-                                    <a href="<?= base_url('dashboard/detail_ikan/').$ih->id_ikan ?>" class="btn btn-warning" style="font-size:11px; margin-left: 5px">Detail</a>
-                                    </div>
-                                </div>
-                            
+                                .row 
+                            <div class="card-footer" style="text-align: right;">
+                                <?php
+                                if($ih->stok =="0"){
+                                    echo "<span class='btn btn-danger' disable>Stok Habis</span>";
+                                } else {
+                                  echo anchor('dashboard/tambah_ke_Keranjang/'.$ih->id_ikan,'<div class="btn btn-primary mt-1">tambah ke keranjang</div>');
+                                  // redirect('teransaksi');
+                                }
+                                ?>
+                                <?php ?>
+                                
+                                <a href="<?= base_url('dashboard/detail_ikan/').$ih->id_ikan ?>" class="btn btn-warning" style="font-size:11px; margin-left: 5px">Detail</a>
+                            </div>
                   </div>
               </div>
             </div>
@@ -181,57 +173,72 @@
 
         <div class="box-container">
             <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-1.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>iceland</h3>
+                <img src="<?= base_url('assets/updt/1.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>iceland</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-2.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>greenland</h3>
+                <img src="<?= base_url('assets/updt/2.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>greenland</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-3.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>alaska</h3>
+                <img src="<?= base_url('assets/updt/3.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>alaska</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-4.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>thailand</h3>
+                <img src="<?= base_url('assets/updt/4.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>thailand</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-5.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>brazil</h3>
+                <img src="<?= base_url('assets/updt/5.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>brazil</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-6.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>maldive</h3>
+                <img src="<?= base_url('assets/updt/6.jpg') ?>" alt="" />
+                
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-7.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>iceland</h3>
+                <img src="<?= base_url('assets/updt/7.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>iceland</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-8.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>alaska</h3>
+                <img src="<?= base_url('assets/updt/8.jpg') ?>" alt="" />
+                <!-- <span>travel spot</span>
+                <h3>alaska</h3> -->
             </div>
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-                <img src="<?= base_url('assets/template2/') ?>images/gallery-img-9.jpg" alt="" />
-                <span>travel spot</span>
-                <h3>maldive</h3>
+                <img src="<?= base_url('assets/updt/9.jpg') ?>" alt="" />
+            </div>
+            <!-- <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/10.jpg') ?>" alt="" />
+            </div> -->
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/11.jpg') ?>" alt="" />
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/12.jpg') ?>" alt="" />
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/13.jpg') ?>" alt="" />
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/14.jpg') ?>" alt="" />
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+                <img src="<?= base_url('assets/updt/15.jpg') ?>" alt="" />
             </div>
         </div>
     </section>
@@ -242,10 +249,11 @@
 
     <div class="banner" id="map">
         <div class="content" data-aos="zoom-in-up" data-aos-delay="300">
-            <span>start your adventures</span>
-            <h3>Let's Explore This World</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum praesentium amet quibusdam quam officia suscipit odio.</p>
-            <a href="#book-form" class="btn">book now</a>
+            <span>Map</span>
+            <h4>UPTD PENGEMBANGAN BUDIDAYA</h4>
+            <h4>PENGOLAHAN DAN PEMASARAAN PERIKANAN</h4>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum praesentium amet quibusdam quam officia suscipit odio.</p>
+            <a href="#book-form" class="btn">book now</a> -->
             <iframe src="https://www.google.com/maps/d/embed?mid=199C8SGJld-zeyUpFv9ZoQbh-9vo&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
         </div>
     </div>

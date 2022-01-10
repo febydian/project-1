@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin-bottom: 122px;">
+<div class="container-fluid" style="margin-bottom: 195px;" >
     <div class="container" style="padding: 5px 5px;">
     <div class="card mx-auto" style="margin: 120px 0px; padding:15px 0px;">
     <?php echo $this->session->flashdata('pesan') ?>

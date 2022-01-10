@@ -57,7 +57,7 @@
                     </div> 
                     <div style="text-align: right;">
                         <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
-                        <a class="btn btn-danger btn-sm" href="<?= base_url('invoice')?>">Kembali</a>
+                        <a class="btn btn-danger btn-sm" href="<?= base_url('invoice1')?>">Kembali</a>
                     </div>
                 </div>
             </div>

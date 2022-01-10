@@ -11,6 +11,8 @@ class Pesanan extends REST_Controller{
     {
         parent::__construct();
         $this->load->model('invoice_api_model', 'pesanan');
+
+        $this->methods['index_get']['limit'] = 500;
     }
 
     public function index_get() 

@@ -56,20 +56,17 @@
                                         <input type="hidden" name="id_user" class="form-control" value="<?= $this->session->userdata('id_user') ?>">
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <!-- <div class="form-group">
+                                                    <div class="form-group">
                                                         <label>Provinsi</label>
-                                                        <select name="provinsi"  class="form-control"></select>
-                                                    </div> -->
-                                                    <!-- <div class="form-group">
+                                                        <select name="provinsi"  class="form-control" required></select>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Expedisi</label>
                                                         <select name="expedisi" id="expedisi" class="form-control"></select>
-                                                    </div> -->
-                                                    <div class="form-group">
-                                                        <label for="inputState">Provinsi</label>
-                                                        <!-- <input type="text" name="provinsi" id="provinsi" class="form-control" required></input> -->
-                                                        <select name="provinsi" id="provinsi" class="form-control" required> 
-                                                            <option selected>-- Provinsi --</option>
-                                                        </select>
+                                                    </div>
+                                                    <!-- <div class="form-group">
+                                                        <label>Provinsi</label>
+                                                        <select name="provinsi" class="form-control" ></select>
                                                         <?= form_error('provinsi', '<small class="text-danger pl-3">','</small>') ?>
                                                     </div>
                                                     <div class="form-group">
@@ -80,26 +77,17 @@
                                                             <option>TIKI</option>
                                                             <option>Pos indonesia</option>
                                                         </select>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <!-- <div class="form-group">
+                                                    <div class="form-group">
                                                         <label>Kota</label>
                                                         <select name="kota" id="kota" class="form-control" required></select>
                                                     </div>
-                                                    <div class="form-group">
+                                                    <!-- <div class="form-group">
                                                         <label>Paket</label>
                                                         <select name="paket" id="paket" class="form-control" required></select>
                                                     </div> -->
-                                                    <div class="form-group">
-                                                        <label for="inputState">Kota</label>
-                                                        <input type="text" name="kota" id="kota" class="form-control" required></input>
-                                                        <!-- <select name="kota" id="kota" class="form-control" required>
-                                                            <option selected>-- Kota --</option>
-                                                            <option>Semarang</option>
-                                                            <option>medan</option>
-                                                        </select> -->
-                                                    </div>
                                                     <div class="form-group">
                                                         <div class="form-group">
                                                             <label>Kode Pos</label>
@@ -191,7 +179,18 @@
 
 
 
-
+<!-- <script>
+    $(document).ready(function(){
+        $.ajax ({
+            type : 'post',
+            url : '<?= base_url('updt/provinsi') ?>',
+            success : function(hasil_provinsi)
+            {
+                $("select[name=provinsi]").html(hasil_provinsi);
+            }
+        })
+    })
+</script>  -->
 <script>
     $(document).ready(function() {
         // GET DATA PROFINSI 
@@ -199,8 +198,7 @@
             type : "POST",
             url : "<?= base_url('updt/provinsi') ?>",
             success : function(hasil_provinsi){
-                console.log(hasil_provinsi);
-                // $("select[name=provinsi]").html(hasil_provinsi);
+                $("select[name=provinsi]").html(hasil_provinsi);
             }
         });
 
@@ -210,19 +208,28 @@
             $.ajax({
                 type : "POST",
                 url : "<?= base_url('updt/kota') ?>",
-                data : 'id_provinsi='+ id_provinsi_terpilih,
+                data : 'id_provinsi=' + id_provinsi_terpilih,
                 success : function(hasil_kota) {
                     $("select[name=kota]").html(hasil_kota);
                 }
             })
         });
+
+        $("select[name=kota]").on("change", function() {
+            $.ajax({
+                type : "POST",
+                url : "<?= base_url('updt/expedisi') ?>",
+                success : function(hasil_expedisi) {
+                    $("select[name=expedisi]").html(hasil_expedisi);
+                }
+            })
+        });
+
+        
     });
 </script>
 
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> -->
+
 
 
 

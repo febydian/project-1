@@ -5,10 +5,15 @@
         </div>
 
         <?php echo $this->session->flashdata('pesan') ?>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" style="width: 100%;">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                <img src="<?= base_url('assets/upload/').$user['image'] ?>" class="card-img" >
+                <?php
+                    if(empty($user['image'])) { ?>
+                    <img src="<?= base_url('assets/stisla/')?>/assets/img/avatar/avatar-1.png" class="card-img" >
+                <?php } else { ?>
+                    <img src="<?= base_url('assets/upload/').$user['image'] ?>" class="card-img" >
+                <?php } ?>
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">

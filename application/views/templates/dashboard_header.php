@@ -10,21 +10,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="<?= base_url('assets/bootstrap_4.6/') ?>css/bootstrap.min.css" crossorigin="anonymous"> -->
-
     <!-- custom css file link  -->
     <link rel="stylesheet" href="<?= base_url('assets/template2/'); ?>css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <!-- custom js file link  -->
     <script src="<?= base_url('assets/template2/'); ?>js/script.js" defer></script>
     <!-- bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head >
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
 
-<body>
+<body">
 
 
 <!DOCTYPE html>
@@ -34,7 +31,7 @@
         <div id="menu-btn" class="fas fa-bars"></div>
         <li>
           <!-- <img src="<?= base_url('assets/template2/images/logo.png') ?>"  style="width: 45px; height:45px" alt=""> -->
-            <a data-aos="zoom-in-left" data-aos-delay="150" href="<?= base_url('dashboard') ?>" class="logo">UPDT sleman</a>
+            <a data-aos="zoom-in-left" data-aos-delay="150" href="<?= base_url('dashboard') ?>" class="logo">UPDT PBPP Perikanan</a>
         </li>
 
         <nav class="navbar">
@@ -62,7 +59,7 @@
           <?php if($this->session->userdata('nama')) { ?>
             <a data-aos="zoom-in-left" data-aos-delay="450" href="#profil"><i class="fas fa-user"></i> Hi, <?= $this->session->userdata('nama') ?> <i class="fas fa-caret-down"></i></a>
             <ul class="dropdown1">
-                <li><a data-aos="zoom-in-left" data-aos-delay="450" href="#about">Edit</a></li>
+                <!-- <li><a data-aos="zoom-in-left" data-aos-delay="450" href="#about">Edit</a></li> -->
                 <!-- <li><a data-aos="zoom-in-left" data-aos-delay="450" href="<?= base_url('auth/ganti_password') ?>">Ganti Password</a></li> -->
                 <li><a data-aos="zoom-in-left" data-aos-delay="450" href="<?= base_url('auth/logout') ?>">Logout</a></li>
             </ul>

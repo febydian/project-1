@@ -59,9 +59,9 @@
                                     if(empty($invoice->bukti_pembayaran)) { ?>
                                     <button class="btn btn-danger btn-block">Belum Mengirim Bukti Pembayaran</button>
                                     <?php } else { ?>
+                                        <h5>Bukti Teransaksi :</h5>
                                         <div class="row md-6 mb-5">
-                                            <h5>Bukti Teransaksi :</h5>
-                                            <img width="100%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
+                                            <img width="80%" src="<?= base_url('assets/bukti_pembayaran/').$invoice->bukti_pembayaran ?>" alt="">
                                         </div>
                                     <?php } ?>
                             </div>

@@ -11,6 +11,8 @@ class Ikan extends REST_Controller{
     {
         parent::__construct();
         $this->load->model('ikan_api_model', 'ikan');
+
+        $this->methods['index_get']['limit'] = 500;
     }
 
 
@@ -38,10 +40,10 @@ class Ikan extends REST_Controller{
         }
     }
 
-    public function index_delete()
-    {
-        $id = $this->get('id_ikan');
-    }
+    // public function index_delete()
+    // {
+    //     $id = $this->get('id_ikan');
+    // }
 }
 
 ?>
